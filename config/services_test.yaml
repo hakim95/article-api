@@ -1,0 +1,17 @@
+services:
+    app.article.repository:
+        class: App\Repository\ArticleRepository
+        arguments:
+            - '@doctrine'
+    app.user.repository:
+        class: App\Repository\UserRepository
+        arguments:
+            - '@doctrine'
+        public: true
+    app.article:
+        class: App\Service\Article
+        arguments:
+            - '@app.article.repository'
+            - '@doctrine'
+            - '@validator'
+        public: true
