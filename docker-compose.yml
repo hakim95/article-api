@@ -28,7 +28,7 @@ services:
     depends_on:
       - php
     environment:
-      SERVER_NAME: ${SERVER_NAME:-zelty-test.local, caddy:80}
+      SERVER_NAME: ${SERVER_NAME:-article-api.local, caddy:80}
     restart: unless-stopped
     volumes:
       - php_socket:/var/run/php
